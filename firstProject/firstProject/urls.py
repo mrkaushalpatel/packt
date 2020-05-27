@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from firstApp import views
+from firstApp import views as fa
+from quoteApp import views as qa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.display, name='display'),
-    path('datetime/', views.displayDateTime, name='displayDateTime'),
+    path('hello/', fa.display, name='display'),
+    path('datetime/', fa.displayDateTime, name='displayDateTime'),
+    path('quote', qa.displayQuote, name='displayQuote'),
 ]
