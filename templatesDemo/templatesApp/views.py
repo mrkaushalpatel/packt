@@ -3,4 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 def template(request):
-    return render(request, 'templatesApp/firstTemplate.html')
+    myDict = {"name":"Kaushal Patel"}
+    return render(request, 'templatesApp/firstTemplate.html', context=myDict)
