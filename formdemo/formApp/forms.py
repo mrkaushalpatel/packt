@@ -9,6 +9,17 @@ class UserRegistrationForm(forms.Form):
     password = forms.CharField(widget = forms.PasswordInput)
     ssn = forms.IntegerField()
 
+    def clean(self):
+        user_cleaned_data = super().clean()
+        inputFirstName = user_cleaned_data['firstName']
+        if len(inputFirstName)>20:
+            raise forms.ValidationError('The max length of First Name is 20 Character')
+            
+        inpuEmail = self.cleaned_data['email']
+        if inpuEmail.find('@') == -1:
+            raise forms.ValidationError('The email should contain @')
+
+"""
     def clean_firstName(self):
         inputFirstName = self.cleaned_data['firstName']
         if len(inputFirstName)>20:
@@ -20,3 +31,4 @@ class UserRegistrationForm(forms.Form):
         if inpuEmail.find('@') == -1:
             raise forms.ValidationError('The email should contain @')
         return inpuEmail
+"""
