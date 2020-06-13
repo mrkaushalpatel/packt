@@ -1,4 +1,4 @@
-"""modelFormsDemo URL Configuration
+"""fbvCRUD URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,10 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from modelForms import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('listProject/', views.listProjects, name='listProjects'),
-    path('addProject/', views.addProjects, name='addProjects')
 ]
