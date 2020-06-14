@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+      <br>
+      <br>
+      <br>
+      <div class="container">
+          <div class="card card-custom">
+       <div class="card-header">
+        <h3 class="card-title">
+         Update Student
+        </h3>
+       </div>
+       <!--begin::Form-->
+       <form method="post">
+         {% csrf_token %}
+        <div class="card-body">
+         <div class="form-group mb-8">
+          <div class="alert alert-custom alert-default" role="alert">
+           <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
+           <div class="alert-text">
+            Update the Student Information and click on update button
+           </div>
+          </div>
+         </div>
+         <div class="form-group row">
+          <label  class="col-2 col-form-label">First Name</label>
+          <div class="col-10">
+           <input class="form-control" type="text" name="firstName" value="{{student.firstName}}" id="example-text-input"/>
+          </div>
+         </div>
+         <div class="form-group row">
+          <label  class="col-2 col-form-label">Last Name</label>
+          <div class="col-10">
+           <input class="form-control" type="text" name="lastName" value="{{student.lastName}}" id="example-text-input"/>
+          </div>
+         </div>
+         <div class="form-group row">
+          <label  class="col-2 col-form-label">Test Score</label>
+          <div class="col-10">
+           <input class="form-control" type="text" name="testScore" value="{{student.testScore}}" id="example-text-input"/>
+          </div>
+         </div>
+
+        </div>
+        <div class="card-footer">
+         <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-10">
+           <button type="submit" class="btn btn-success mr-2" value="Update">Update</button>
+           <button type="reset" class="btn btn-secondary" onclick="location.href='/'">Cancel</button>
+          </div>
+         </div>
+        </div>
+       </form>
+      </div>
+    </div>
+      <!--JavaScript-->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
